@@ -1,5 +1,7 @@
 package com.abexa.kmp.utils
 
+import androidx.compose.foundation.layout.Box
+import androidx.compose.foundation.layout.padding
 import androidx.compose.material.MaterialTheme
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.text.font.FontFamily
@@ -8,7 +10,9 @@ import kmpdesktop.composeapp.generated.resources.Res
 import kmpdesktop.composeapp.generated.resources.happy_halloween
 import org.jetbrains.compose.resources.Font
 import androidx.compose.material.Typography
+import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.TextStyle
+import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import kmpdesktop.composeapp.generated.resources.fledglingsb
 import kmpdesktop.composeapp.generated.resources.partizano
@@ -55,6 +59,8 @@ fun typographyApp() : Typography {
 @Composable
 fun loadPrimaryTheme(content : @Composable () -> Unit) {
     MaterialTheme(typography = typographyApp()){
-        content()
+        Box(Modifier.padding(10.dp)){
+            content()
+        }
     }
 }

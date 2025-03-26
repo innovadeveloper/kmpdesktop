@@ -48,6 +48,7 @@ fun BasicLayout() {
     }
 }
 ```
+![](.guide_images/guide-003_001.png)
 
 ### 🖼️ **Resultado:**
 Este código genera una pantalla con tres secciones de diferente altura, respetando las proporciones definidas con `weight`.
