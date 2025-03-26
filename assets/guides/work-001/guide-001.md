@@ -77,6 +77,8 @@ fun BasicLayoutExample() {
 }
 ```
 
+![](.guide_images/BasicLayoutExample.png)
+
 🔹 **Explicación:**  
 - `Column` organiza los elementos verticalmente.  
 - `Row` alinea elementos en horizontal y los distribuye equitativamente con `Arrangement.SpaceEvenly`.  
@@ -85,7 +87,7 @@ fun BasicLayoutExample() {
 ---
 
 ## 🔥 **Ejemplo Complejo: Uso de `ConstraintLayout`**
-📌 **Objetivo:** Crear un diseño donde los elementos estén alineados con restricciones, similar a un **RelativeLayout** en XML.
+📌 **Objetivo:** Crear un diseño donde los elementos estén alineados con restricciones, similar a un **RelativeLayout** en XML. (ConstraintLayout solo compatible con Android)
 
 ```kotlin
 @Composable

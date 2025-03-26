@@ -33,70 +33,100 @@ import kmpdesktop.composeapp.generated.resources.partizano
 import org.jetbrains.compose.resources.Font
 import org.jetbrains.compose.resources.painterResource
 
-@Composable
-fun simpleProportionalColumn() {
-    Column(Modifier.fillMaxSize()) {
-        Box(Modifier.weight(1f).fillMaxWidth().background(Color.Red))
-        Box(Modifier.weight(1f).fillMaxWidth().background(Color.Green))
-        Box(Modifier.weight(1f).fillMaxWidth().background(Color.Blue))
-    }
-}
 
 @Composable
-fun simpleProportionalRow() {
-    Row(Modifier.fillMaxSize()) {
-        Box(Modifier.weight(1f).fillMaxHeight().background(Color.Red))
-        Box(Modifier.weight(1f).fillMaxHeight().background(Color.Green))
-        Box(Modifier.weight(1f).fillMaxHeight().background(Color.Blue))
-    }
-}
-
-@Composable
-fun simpleItemList() {
+@Preview
+fun BasicLayoutExample() {
     loadPrimaryTheme {
-        Row(Modifier.width(200.dp)) {
-            Image(
-                painter = painterResource(Res.drawable.compose_multiplatform), contentDescription = null,
-                Modifier.size(50.dp).align(Alignment.CenterVertically)
+        Column(
+            modifier = Modifier
+                .fillMaxWidth()
+                .background(Color.LightGray)
+                .padding(16.dp)
+        ) {
+            Text(
+                text = "Encabezado",
+                fontSize = 24.sp,
+                fontWeight = FontWeight.Bold,
+                modifier = Modifier.padding(bottom = 8.dp)
             )
-            Column(Modifier.fillMaxWidth()) {
+
+            Row(
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .padding(8.dp),
+                horizontalArrangement = Arrangement.SpaceEvenly
+            ) {
+                Text(text = "Item 1", color = Color.Blue)
+                Text(text = "Item 2", color = Color.Green)
+                Text(text = "Item 3", color = Color.Red)
+            }
+
+            Box(
+                modifier = Modifier
+                    .size(100.dp)
+                    .background(Color.Cyan)
+                    .padding(top = 16.dp)
+            ) {
                 Text(
-                    "Title", style = MaterialTheme.typography.h1,
-                    modifier = Modifier.align(Alignment.Start).width(100.dp)
-                )
-                Text(
-                    "Description", style = MaterialTheme.typography.caption,
-                    modifier = Modifier.align(Alignment.Start).width(100.dp)
-                )
-                Text(
-                    "View more", style = MaterialTheme.typography.caption,
-                    modifier = Modifier.align(Alignment.End)
+                    text = "Superpuesto",
+                    modifier = Modifier.align(Alignment.Center),
+                    color = Color.White,
+                    fontWeight = FontWeight.Bold
                 )
             }
         }
     }
 }
 
-// guide work 2
-//Objetivo: Crear un layout con un Column, dividiendo el espacio en:
-//Header (20%) con un fondo azul
-//Body (60%) con un fondo verde
-//Footer (20%) con un fondo rojo
+
+@Composable
+fun ComplexLayoutExample() {
+    loadPrimaryTheme {
+    }
+}
 
 
 @Composable
-fun fractionProportionalLayout() {
+fun BasicLayout() {
     loadPrimaryTheme {
-        Column(Modifier.fillMaxSize()) {
-            Box(Modifier.weight(0.2f).fillMaxWidth().alpha(0.2f).background(Color.Blue))
-            Box(Modifier.weight(0.6f).fillMaxWidth().alpha(0.2f).background(Color.Green))
-            Box(Modifier.weight(0.2f).fillMaxWidth().alpha(0.2f).background(Color.Red))
+        Column(modifier = Modifier.fillMaxSize()) {
+            Box(
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .weight(0.2f)
+                    .background(Color.Blue),
+                contentAlignment = Alignment.Center
+            ) {
+                Text(text = "Header", color = Color.White, fontSize = 20.sp)
+            }
+
+            Box(
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .weight(0.6f)
+                    .background(Color.Green),
+                contentAlignment = Alignment.Center
+            ) {
+                Text(text = "Body", color = Color.White, fontSize = 20.sp)
+            }
+
+            Box(
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .weight(0.2f)
+                    .background(Color.Red),
+                contentAlignment = Alignment.Center
+            ) {
+                Text(text = "Footer", color = Color.White, fontSize = 20.sp)
+            }
         }
     }
 }
 
+
 @Composable
-fun fractionProportionalLayout2() {
+fun AdvancedLayout() {
     loadPrimaryTheme {
         Column(modifier = Modifier.fillMaxSize()) {
             // Header
@@ -149,9 +179,9 @@ fun fractionProportionalLayout2() {
     }
 }
 
+
 @Composable
-@Preview
-fun basicStyledBox() {
+fun BasicStyledBox() {
     loadPrimaryTheme {
         Box(
             modifier = Modifier
@@ -159,7 +189,7 @@ fun basicStyledBox() {
                 .background(Color.LightGray, shape = RoundedCornerShape(16.dp)) // Fondo y esquinas redondeadas
                 .border(2.dp, Color.DarkGray, shape = RoundedCornerShape(16.dp)) // Borde
                 .padding(16.dp) // Espaciado interno
-                .shadow(5.dp, shape = RoundedCornerShape(16.dp)) // Sombra
+                .shadow(8.dp, shape = RoundedCornerShape(16.dp)) // Sombra
         ) {
             Text(
                 text = "Caja Simple",
@@ -172,33 +202,8 @@ fun basicStyledBox() {
 }
 
 @Composable
-fun basicStyledBox2() {
-    loadPrimaryTheme {
-        Card(
-            shape = RoundedCornerShape(16.dp),
-            colors = CardDefaults.cardColors(containerColor = Color.LightGray),
-            elevation = CardDefaults.cardElevation(defaultElevation = 5.dp),
-            modifier = Modifier.size(150.dp)
-        ) {
-            Box(
-                modifier = Modifier.fillMaxSize(),
-                contentAlignment = Alignment.Center
-            ) {
-                Text(
-                    text = "Caja Simple s",
-                    fontSize = 16.sp,
-                    color = Color.Black
-                )
-            }
-        }
-    }
-}
-
-
-
-@Composable
-//@Preview
-fun ComplexStyledBox2() {
+@Preview
+fun ComplexStyledBox() {
     loadPrimaryTheme {
         Box(
             modifier = Modifier
@@ -217,6 +222,7 @@ fun ComplexStyledBox2() {
                 horizontalAlignment = Alignment.CenterHorizontally
             ) {
                 Image(
+//                    painter = painterResource(Res.drawable.compose_multiplatform),
                     painter = painterResource(Res.drawable.compose_multiplatform),
                     contentDescription = null,
                     modifier = Modifier
@@ -228,7 +234,7 @@ fun ComplexStyledBox2() {
                 Text(
                     text = "Hola, Compose!",
                     fontSize = 18.sp,
-//                fontWeight = FontWeight.Bold,
+                    fontWeight = FontWeight.Bold,
                     color = Color.White
                 )
             }

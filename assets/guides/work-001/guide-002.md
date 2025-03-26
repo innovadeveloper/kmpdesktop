@@ -1,4 +1,4 @@
-
+it p
 ---
 
 ## 🟢 **Ejemplo Básico**: Header, Body y Footer con `weight`
@@ -48,7 +48,7 @@ fun BasicLayout() {
     }
 }
 ```
-![](.guide_images/guide-003_001.png)
+![](.guide_images/BasicLayout.png)
 
 ### 🖼️ **Resultado:**
 Este código genera una pantalla con tres secciones de diferente altura, respetando las proporciones definidas con `weight`.
@@ -121,6 +121,8 @@ fun AdvancedLayout() {
     }
 }
 ```
+
+![](.guide_images/AdvancedLayout.png)
 
 ### 🖼️ **Resultado:**
 Este diseño agrega una distribución más compleja con una barra lateral (`Sidebar`) dentro de un `Row`, mostrando cómo `weight` puede aplicarse tanto en `Column` como en `Row`.

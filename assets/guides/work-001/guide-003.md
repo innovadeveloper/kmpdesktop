@@ -30,6 +30,8 @@ fun BasicStyledBox() {
 }
 ```
 
+![](.guide_images/BasicStyledBox.png)
+
 🔹 **Explicación:**  
 ✅ `background(Color.LightGray, shape = RoundedCornerShape(16.dp))` → Fondo gris con bordes redondeados.  
 ✅ `border(2.dp, Color.DarkGray, RoundedCornerShape(16.dp))` → Borde oscuro de 2dp.  
