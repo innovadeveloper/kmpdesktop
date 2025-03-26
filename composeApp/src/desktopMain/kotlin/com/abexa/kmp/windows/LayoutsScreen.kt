@@ -46,12 +46,24 @@ fun simpleProportionalRow() {
 @Preview
 fun simpleItemList() {
     loadPrimaryTheme {
-        Row(Modifier.fillMaxWidth()) {
-            Image(painter = painterResource(Res.drawable.compose_multiplatform), contentDescription = null, Modifier.size(50.dp).align(Alignment.CenterVertically))
+        Row(Modifier.width(200.dp)) {
+            Image(
+                painter = painterResource(Res.drawable.compose_multiplatform), contentDescription = null,
+                Modifier.size(50.dp).align(Alignment.CenterVertically)
+            )
             Column(Modifier.fillMaxWidth()) {
-                Text("Title", style = MaterialTheme.typography.h1, modifier = Modifier.align(Alignment.Start).width(100.dp))
-                Text("Description", style = MaterialTheme.typography.caption, modifier = Modifier.align(Alignment.Start).width(100.dp))
-                Text("View more", style = MaterialTheme.typography.caption, modifier = Modifier.align(Alignment.End))
+                Text(
+                    "Title", style = MaterialTheme.typography.h1,
+                    modifier = Modifier.align(Alignment.Start).width(100.dp)
+                )
+                Text(
+                    "Description", style = MaterialTheme.typography.caption,
+                    modifier = Modifier.align(Alignment.Start).width(100.dp)
+                )
+                Text(
+                    "View more", style = MaterialTheme.typography.caption,
+                    modifier = Modifier.align(Alignment.End)
+                )
             }
         }
     }
